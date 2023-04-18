@@ -48,6 +48,36 @@
 
 暴力 — 用纸和笔记录
 
-
 爬虫 — 优化记录和输入
 
+# bs4 parse html 
+#### 推荐是搭建虚拟环境
+```
+python3 venv -m scrapy 
+
+source ./scrapy/bin/activate
+
+pip install beautifulsoup4
+- i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+#### 尝试爬取一些静态页面
+```              
+http://quotes.toscrape.com/page/3/  // 查看他的网页源代码 --- 非常的静态
+```
+
+code: 
+```
+from bs4 import BeautifulSoup
+import requests
+
+url = 'http://quotes.toscrape.com/tag/humor/'
+response = requests.get(url)
+html_doc = response.content
+
+soup = BeautifulSoup(html_doc,'html.parser')
+spans = soup.find_all('span')
+
+with open('output','w') as f: 
+    for span in spans: 
+        f.write(span.text + '\n')
+```
