@@ -91,7 +91,28 @@ for detail in urls:
             f.write(span.text + '\n' + '\n')
 
 ```
+# Selenium args 
+```
+在Selenium 4中，find_elements_by方法的参数可以是以下选项：
 
+1. By.ID：根据元素的id属性查找元素。例如：driver.find_elements(By.ID, 'element_id')。
+
+2. By.NAME：根据元素的name属性查找元素。例如：driver.find_elements(By.NAME, 'element_name')。
+
+3. By.CLASS_NAME：根据元素的class属性查找元素。例如：driver.find_elements(By.CLASS_NAME, 'element_class')。
+
+4. By.TAG_NAME：根据元素的标签名查找元素。例如：driver.find_elements(By.TAG_NAME, 'element_tag')。
+
+5. By.LINK_TEXT：根据链接文本查找元素。例如：driver.find_elements(By.LINK_TEXT, 'link_text')。
+
+6. By.PARTIAL_LINK_TEXT：根据链接文本的部分内容查找元素。例如：driver.find_elements(By.PARTIAL_LINK_TEXT, 'partial_link_text')。
+
+7. By.CSS_SELECTOR：根据CSS选择器查找元素。例如：driver.find_elements(By.CSS_SELECTOR, 'css_selector')。
+
+8. By.XPATH：根据XPath表达式查找元素。例如：driver.find_elements(By.XPATH, 'xpath_expression')。
+
+需要注意的是，find_elements_by方法返回的是一个列表，包含所有符合条件的元素，如果没有找到符合条件的元素，则返回一个空的列表。在使用find_elements_by方法查找元素时，需要根据实际情况选择合适的查找方法和参数，以保证能够准确地找到目标元素。
+```
 # Selenium
 爬个lc周赛数据玩玩，之前爬800个就被封了乐
 
