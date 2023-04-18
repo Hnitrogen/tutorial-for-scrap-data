@@ -92,8 +92,10 @@ for detail in urls:
 
 ```
 
-# Selenium 
+# Selenium
 爬个lc周赛数据玩玩，之前爬800个就被封了乐
+
+- 记得先在本地手模一个静态的玩玩 --- 网络延迟 / 防止被封ip 
 ```
 from selenium import webdriver
 from selenium.webdriver.common.by import By
