@@ -69,15 +69,25 @@ code:
 ```
 from bs4 import BeautifulSoup
 import requests
+import time 
 
-url = 'http://quotes.toscrape.com/tag/humor/'
-response = requests.get(url)
-html_doc = response.content
+url = 'http://quotes.toscrape.com/page/'    # 记得检验路由的正确性
+urls = [] 
+for i in range(1,10): 
+    comp = url + str(i) + '/' 
+    urls.append(comp)
 
-soup = BeautifulSoup(html_doc,'html.parser')
-spans = soup.find_all('span')
+for detail in urls:
+    print(detail)
+    response = requests.get(detail)
+    html_doc = response.content
 
-with open('output','w') as f: 
-    for span in spans: 
-        f.write(span.text + '\n')
+    soup = BeautifulSoup(html_doc,'html.parser')
+    spans = soup.find_all('span',class_='text')
+    time.sleep(1)
+
+    with open('shaguai','a') as f: 
+        for span in spans: 
+            f.write(span.text + '\n' + '\n')
+
 ```
