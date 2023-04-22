@@ -50,6 +50,7 @@
 
 爬虫 — 优化记录和输入
 
+
 # bs4 parse html 
 #### 推荐是搭建虚拟环境
 ```
@@ -88,7 +89,7 @@ for detail in urls:
 
     with open('shaguai','a') as f: 
         for span in spans: 
-            f.write(span.text + '\n' + '\n')
+            f.write(span.text + '\n' + '\n') 
 
 ```
 # Selenium args 
@@ -139,7 +140,6 @@ urls = []
 for i in range(1,191):
     urls.append(url+str(i)+'/')
     print(url+str(i)+'/')
-
 
 for url in urls:
     driver.get(url)
